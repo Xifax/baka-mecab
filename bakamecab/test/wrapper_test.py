@@ -32,3 +32,8 @@ class TestWrapper(unittest.TestCase):
             self.parser.get_info().keys(),
             self.parser.get_words()
         )
+
+    def test_can_get_readings(self):
+        """Check if may get readings (if available)"""
+        self.assertEqual(len(self.parser.get_readings()), 5)
+        self.assertIn('ディレクトリ', self.parser.get_readings())
