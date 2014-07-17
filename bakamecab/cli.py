@@ -51,6 +51,10 @@ class Parser:
 
     def process(self, results):
         """Process results, line by line"""
+        # Clear previous results (if any)
+        del self.words[:]
+        self.info.clear()
+
         # Word list
         for line in results:
             if 'EOS' not in line:
